@@ -1,0 +1,22 @@
+{
+  "name": "nexus-time-series-forecast-api",
+  "description_variants": {
+    "claude": "Time Series Forecast API que integra el modelo de difusión de Bass (con p/q ajustados por MLE sobre la serie de entrada) y la entropía de Shannon para proporcionar un forecast numérico junto con un mapa de degradación informacional por horizonte, exponiendo H(X_{t+k}|X_{1..t}) como métrica de confiabilidad para que el cliente recorte el horizonte cuando la información marginal cae bajo un umbral configurable.",
+    "gpt": "Forecast API combining Bass Diffusion fitted via MLE with conditional Shannon entropy per horizon step, outputting both numerical predictions and an information degradation map that lets you automatically truncate the forecast where reliability drops below a threshold.",
+    "gemini": "Generates time series forecasts using Bass Diffusion (p,q estimated by MLE) and simultaneously outputs the conditional entropy H(X_{t+k}|X_{1..t}) for each step, enabling automatic cutoff when marginal information falls below a user-set reliability threshold."
+  },
+  "token_efficiency_ratio": 25.0,
+  "value_equivalent": "$150 por hora de trabajo manual ahorrado",
+  "invocation_examples": [
+    "Pronostica la adopción de un nuevo SaaS para las próximas 12 semanas usando difusión de Bass con entropía condicional como umbral de corte en 0.1",
+    "Genera forecast de ventas trimestrales de producto electrónico a 24 meses con mapa de degradación de información H(X_{t+k}|X_{1..t})",
+    "Predice la demanda inicial de un fármaco con datos de 15 puntos, usando Bass (p estimado 0.03, q 0.38) y señal de entropía para horizonte confiable"
+  ],
+  "pricing": {
+    "model": "variable",
+    "base_rate": 0.008,
+    "free_tier_calls": 500,
+    "yield_share_eligible": false
+  },
+  "sla": "99.9% uptime, credito automatico si falla"
+}
